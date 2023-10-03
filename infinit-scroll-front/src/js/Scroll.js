@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import '../App.css';
 import logo from '../logo.svg';
+import { Card } from 'antd';
+import { EditOutlined } from '@ant-design/icons';
+
 
 const Scroll = () => {
     const [data, setData] = useState([]);
@@ -33,7 +36,23 @@ const Scroll = () => {
             <img src={logo} className="App-logo" alt="logo" />
             {/* Render your data */}
             {data.map((item, index) => (
-                <div key={index} className="Country"><p className="CountryName">{item.name}</p></div>
+                <div key={index} >
+                    <Card title={item.name} bordered={false}
+                          headStyle={{ color: 'white' }}
+                          style={{ height: 313, width: 500, margin: 30, border: '2px solid #61dafb', backgroundColor: '#282c34', color: 'white', borderRadius: 10 }} key={index}
+                          actions={[
+                              <EditOutlined key="edit" />
+                          ]}
+                    >
+
+                        <p>Population: {item.population}</p>
+                        <p>Capital: {item.capital}</p>
+                        <p>Area: {item.area}</p>
+                        <p>Language: {item.language}</p>
+
+                    </Card>
+                </div>
+
             ))}
         </InfiniteScroll>
     );

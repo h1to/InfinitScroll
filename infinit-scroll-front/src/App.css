@@ -37,19 +37,3 @@
     transform: rotate(360deg);
   }
 }
-
-.Country {
-  height: 150px;
-  width: 500px;
-  margin: 30px;
-  padding: 50px;
-  border-color: black;
-  border: 2px solid #61dafb;
-  border-radius: 30px;
-  padding: 1rem;
-  text-align: center;
-}
-
-.CountryName {
-  margin-top: 50px;
-}
