@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity(name = "countries")
@@ -23,5 +26,19 @@ public class Country {
     
     @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
+    private BigInteger population;
+
+
+    @Column(nullable = false)
+    private String capital;
+
+    @Column(nullable = false)
+    private BigDecimal area;
+
+    @Column(nullable = false)
+    private String language;
+
 
 }
